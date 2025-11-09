@@ -1,0 +1,38 @@
+'use client';
+import TextType from '@/components/TextType';
+import { Social } from './social';
+import ShinyText from '../ShinyText';
+
+export default function Hero() {
+    return(
+        <div className="grid grid-rows-2 lg:flex justify-center lg:mb-20 max-w-[1175px] mx-auto">
+          <div className="grid grid-rows-3 items-center lg:w-[65%] montserrat justify-items-center lg:justify-items-start">
+            {/* <p className="text-base lg:text-xl text-gray-400"></p> */}
+            <ShinyText 
+              text="Hi I'm Atul Verma" 
+              disabled={false} 
+              speed={3} 
+              className='custom-class text-base lg:text-xl' 
+            />
+            <TextType 
+              className='text-3xl lg:text-5xl lg:w-[60%] pb-3 lg:h-[100px]'
+              text={["Full Stack Developer"]}
+              typingSpeed={75}
+              pauseDuration={1000}
+              showCursor={true}
+              cursorCharacter="."
+              
+            />
+            <div className='flex gap-2 '>
+              <Social title='GitHub' image='/github-mark-white.svg' href='https://github.com/wiredbrat'/>
+              <Social title='LinkedIn' image='/linkedin-icon-logo.svg' href='https://www.linkedin.com/in/atul-verma-wired/'/>
+              <Social title='GMail' image='/gmail-icon.svg' href='https://mail.google.com/mail/?view=cm&fs=1&to=vermaatul291002@gmail.com&su=Hey%20Atul!'/>
+              <Social title='LeetCode' image='/leetcode.svg' href='https://leetcode.com/u/TfkATLnNy6/'/>
+            </div>
+          </div>
+          <div className="grid grid-rows-1 items-center px-6 lg:px-0 text-center lg:text-start lg:text-2xl text-gray-400 py-5 montserrat">
+            <p>Transforming ideas into interactive and seamless digital experiences with cutting-edge <span className="text-green-300">Fullstack</span> Development.</p>
+          </div>
+        </div>
+    )
+}
