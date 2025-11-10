@@ -7,7 +7,6 @@ export default function Hero() {
     return(
         <div className="grid grid-rows-2 lg:flex justify-center lg:mb-20 max-w-[1175px] mx-auto">
           <div className="grid grid-rows-3 items-center lg:w-[65%] montserrat justify-items-center lg:justify-items-start">
-            {/* <p className="text-base lg:text-xl text-gray-400"></p> */}
             <ShinyText 
               text="Hi I'm Atul Verma" 
               disabled={false} 
@@ -31,16 +30,19 @@ export default function Hero() {
             </div>
           </div>
           <div className="grid grid-rows-1 items-center px-6 lg:px-0 text-center lg:text-start lg:text-2xl text-gray-400 py-5 montserrat">
-            <p>
-              Transforming ideas into interactive and seamless digital experiences with cutting-edge
-              <span className=" ms-2">
+            <div>
+              <p className='inline'>
+                Transforming ideas into interactive and seamless digital experiences with cutting-edge 
+              </p>
+              <span className="ms-2">
                 <ShinyText 
-                  text=" Frontend" 
+                  text="Frontend" 
                   disabled={false} 
                   speed={3} 
                   className='text-purple-700 ' 
                 />
-              </span> Development.</p>
+              </span> Development.
+            </div>
           </div>
         </div>
     )
