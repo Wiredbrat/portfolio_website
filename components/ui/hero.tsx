@@ -14,7 +14,7 @@ export default function Hero() {
               className='custom-class text-base lg:text-xl' 
             />
             <TextType 
-              className='text-center text-3xl lg:text-5xl lg:w-[70%] xl:w-[60%] pb-3 lg:h-[100px]'
+              className='text-3xl lg:text-5xl lg:w-[70%] xl:w-[60%] pb-3 lg:h-[100px]'
               text={["Full Stack Developer"]}
               typingSpeed={75}
               pauseDuration={1000}
