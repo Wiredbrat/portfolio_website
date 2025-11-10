@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
 
 function Navbar() {
     return (
-        <div className="h-20">
+        <div className="lg:h-20">
         </div>
     )
 }

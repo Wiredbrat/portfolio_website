@@ -5,8 +5,8 @@ import ShinyText from '../ShinyText';
 
 export default function Hero() {
     return(
-        <div className="grid grid-rows-2 lg:flex justify-center lg:mb-20 max-w-[1175px] w-[90%] mx-auto">
-          <div className="grid grid-rows-3 items-center lg:w-[65%] montserrat justify-items-center lg:justify-items-start">
+        <div className="grid grid-rows-2 lg:flex justify-center lg:mb-20 max-w-[1175px] w-[90%] md:w-full mx-auto">
+          <div className="grid grid-rows-3 items-end lg:items-center lg:w-[65%] montserrat justify-items-center lg:justify-items-start">
             <ShinyText 
               text="Hi, I'm Atul Verma" 
               disabled={false} 
@@ -14,7 +14,7 @@ export default function Hero() {
               className='custom-class text-base lg:text-xl' 
             />
             <TextType 
-              className='text-3xl lg:text-5xl lg:w-[70%] xl:w-[60%] pb-3 lg:h-[100px]'
+              className='text-center text-3xl lg:text-5xl lg:w-[70%] xl:w-[60%] pb-3 lg:h-[100px]'
               text={["Full Stack Developer"]}
               typingSpeed={75}
               pauseDuration={1000}

@@ -21,7 +21,7 @@ const techLogos = [
 
 export function LogoLoopUi() {
   return (
-    <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} className='max-w-[1175px] mx-auto'>
+    <div className='h-[120px] lg:h-[200px] relative overflow-hidden max-w-[1175px] mx-auto'>
       <LogoLoop
         logos={techLogos}
         speed={90}
