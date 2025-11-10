@@ -5,6 +5,7 @@ import About from '@/components/ui/aboutMe';
 import Projects from '@/components/ui/projects'
 import Contact from '@/components/ui/contact';
 import Copyright from '@/components/ui/copyright';
+import Footer from '@/components/ui/footer';
 
 export default function Home() {
   return (
@@ -15,9 +16,7 @@ export default function Home() {
       <About/>
       <Projects/>
       <Contact/>
-      <div className='h-50'>
-
-      </div>
+        <Footer/>
       <Copyright/>
     </>    
   );
