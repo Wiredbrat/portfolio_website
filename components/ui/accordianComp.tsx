@@ -6,8 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { useState } from "react";
 
 export function AccordionComp() {
+  const [isOpen, SetIsOpen] = useState<boolean>(false);
+  const [isOpen1, SetIsOpen1] = useState<boolean>(false);
+  const [isOpen2, SetIsOpen2] = useState<boolean>(false);
   return (
     <Accordion
       type="single"
@@ -16,35 +20,44 @@ export function AccordionComp() {
       defaultValue=""
     >
       <AccordionItem value="item-1 ">
-        <AccordionTrigger>Web Developer</AccordionTrigger>
+        <AccordionTrigger 
+          className={`${isOpen ? 'text-green-600': ''}`} 
+          onClick={() => SetIsOpen(!isOpen)}>Web Developer
+        </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            I am a full stack web developer with hands on experience in MERN technology
+          <p className="">
+            I am a Full Stack Developer focused on building responsive and scalable web applications using <span className="text-purple-500">Node.js, MongoDB, React.js, Express.js</span>.
           </p>
-          {/* <p> */}
-            {/* Key features include advanced processing capabilities, and an */}
-            {/* intuitive user interface designed for both beginners and experts. */}
-          {/* </p> */}
+          <p className="">
+            Experienced in developing RESTful APIs and integrating dynamic front-end interfaces.
+          </p>
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Mobile Development</AccordionTrigger>
+        <AccordionTrigger 
+          className={`${isOpen1 ? 'text-green-600': ''}`} 
+          onClick={() => SetIsOpen1(!isOpen1)}>
+            Problem Solver
+        </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
           <p>
-            We offer worldwide shipping through trusted courier partners.
-            Standard delivery takes 3-5 business days, while express shipping
-            ensures delivery within 1-2 business days.
+            I Enjoy solving complex problems and writing clean, maintainable code.
           </p>
          
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Return Policy</AccordionTrigger>
+        <AccordionTrigger 
+          className={`${isOpen2 ? 'text-green-600': ''}`} 
+          onClick={() => SetIsOpen2(!isOpen2)}>
+            Learner Forever
+        </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
           <p>
-            We stand behind our products with a comprehensive 30-day return
-            policy. If you&apos;re not completely satisfied, simply return the
-            item in its original condition.
+            Always exploring new technologies to improve performance and user experience.
+          </p>
+          <p>
+            When I’m not coding, I’m probably exploring new technologies, trends or tech blogs.
           </p>
           
         </AccordionContent>

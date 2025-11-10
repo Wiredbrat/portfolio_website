@@ -1,25 +1,23 @@
 'use client';
 import LogoLoop from '../LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiMongoose, SiJavascript } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiMongoose, SiJavascript, SiVercel, SiHtml5, SiCss3, SiExpress, SiMysql } from 'react-icons/si';
 
 const techLogos = [
-  { node: <SiReact />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-  { node: <SiReact />, title: "ReactJs", href: "https://tailwindcss.com" },
+  { node: <SiHtml5 />, title: "HTML5", href: "https://html.spec.whatwg.org/" },
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-  { node: <SiNodedotjs />, title: "NodeJs", href: "https://tailwindcss.com" },
-  { node: <SiMongodb />, title: "MongoDB", href: "https://tailwindcss.com" },
-  { node: <SiMongoose />, title: "Mongoose ODM", href: "https://tailwindcss.com" },
-  { node: <SiJavascript />, title: "JavaScript", href: "https://tailwindcss.com" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org/en" },
+  { node: <SiExpress />, title: "Express.js", href: "https://expressjs.com/" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiMongoose />, title: "Mongoose ODM", href: "https://mongoosejs.com/" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com/docs/atlas/" },
+  { node: <SiVercel />, title: "ReactJs", href: "https://vercel.com/" },
 ];
 
-// Alternative with image sources
-const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-];
 
 export function LogoLoopUi() {
   return (

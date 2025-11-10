@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="grid grid-rows-2 lg:flex justify-center lg:mb-20 max-w-[1175px] mx-auto">
           <div className="grid grid-rows-3 items-center lg:w-[65%] montserrat justify-items-center lg:justify-items-start">
             <ShinyText 
-              text="Hi I'm Atul Verma" 
+              text="Hi, I'm Atul Verma" 
               disabled={false} 
               speed={3} 
               className='custom-class text-base lg:text-xl' 
@@ -36,7 +36,7 @@ export default function Hero() {
               </p>
               <span className="ms-2">
                 <ShinyText 
-                  text="Frontend" 
+                  text="Full Stack" 
                   disabled={false} 
                   speed={3} 
                   className='text-purple-700 ' 
