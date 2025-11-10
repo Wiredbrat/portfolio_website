@@ -38,13 +38,13 @@ export default function Projects() {
               codeUrl="https://github.com/Wiredbrat/DemoCon-Website"
               liveUrl="https://democon2025.vercel.app/"
             />
-            <ProjectCard
+            {/* <ProjectCard
               title="MoviesForDevs"
               image="/projectImages/animania.png"
               tagline="Deployed"
               codeUrl="https://github.com/yourusername/moviesfordevs"
               liveUrl="https://moviesfordevs.vercel.app"
-            />
+            /> */}
           </div>
           <Button
             className='w-full my-6 h-12 rounded-2xl bg-transparent border border-zinc-800 hover:scale-105 duration-300 hover:rounded-full ease-in-out'
