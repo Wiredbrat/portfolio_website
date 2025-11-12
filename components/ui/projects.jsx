@@ -50,7 +50,7 @@ export default function Projects() {
             className='w-full my-6 h-12 rounded-2xl bg-transparent border border-zinc-800 hover:scale-105 duration-300 hover:rounded-full ease-in-out'
             variant='secondary'
           >
-            <a href="" className="my-3 montserrat text-zinc-400 text-xl ">More Projects on <img src="/github-mark-white.svg" alt="" className="inline h-6 px-1"/></a>
+            <a target="_blank" href="https://github.com/Wiredbrat?tab=repositories" className="my-3 montserrat text-zinc-400 text-xl ">More Projects on <img src="/github-mark-white.svg" alt="" className="inline h-6 px-1"/></a>
           </Button>
       </div>
     </div>
