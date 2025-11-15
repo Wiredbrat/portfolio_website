@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex flex-col items-center space-y-6 montserrat opacity-70"> 
               <div className="grid grid-cols-1 gap-3 w-full max-w-xs py-6"> 
                 <div className="flex items-center justify-center lg:justify-normal space-x-3"> 
-                  <span className="text-white text-sm"> Built with </span> 
+                  <span className="text-white text-sm"> Built on </span> 
                   <SiNextdotjs className="h-5 w-5 object-contain filter brightness-0 invert opacity-80"/> 
                   <span className="text-white text-sm"> NextJs </span> 
                 </div>
