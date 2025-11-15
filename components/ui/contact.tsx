@@ -13,10 +13,9 @@ import ShinyText from "../ShinyText";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from 'react-hook-form';
-import { toast } from 'sonner';
+import { toast, Toaster } from 'sonner';
 import { throwDeprecation } from "process";
 import { useEffect, useState } from "react";
-
 
 const formSchema = z.object({
 	name: z.string().min(2, "Enter a valid name"),
@@ -121,9 +120,10 @@ export default function Contact() {
 							: 'Submit'
 						}
 					</InputGroupButton>
-							
+					
 				</div>
 			</div>
+			<Toaster theme={'dark'}/>
 		</div>
 	)
 }
