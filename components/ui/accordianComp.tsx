@@ -22,7 +22,12 @@ export function AccordionComp() {
       <AccordionItem value="item-1 ">
         <AccordionTrigger 
           className={`${isOpen ? 'text-green-600': ''}`} 
-          onClick={() => SetIsOpen(!isOpen)}>Web Developer
+          onClick={() => {
+            SetIsOpen(!isOpen); 
+            SetIsOpen1(false);
+            SetIsOpen2(false);
+          }}>
+          Web Developer
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
           <p className="">
@@ -36,7 +41,11 @@ export function AccordionComp() {
       <AccordionItem value="item-2">
         <AccordionTrigger 
           className={`${isOpen1 ? 'text-green-600': ''}`} 
-          onClick={() => SetIsOpen1(!isOpen1)}>
+          onClick={() => {
+            SetIsOpen1(!isOpen1); 
+            SetIsOpen2(false);
+            SetIsOpen(false);
+          }}>
             Problem Solver
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -49,7 +58,11 @@ export function AccordionComp() {
       <AccordionItem value="item-3">
         <AccordionTrigger 
           className={`${isOpen2 ? 'text-green-600': ''}`} 
-          onClick={() => SetIsOpen2(!isOpen2)}>
+          onClick={() => {
+            SetIsOpen1(false); 
+            SetIsOpen2(!isOpen2);
+            SetIsOpen(false);
+          }}>
             Learner Forever
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
