@@ -47,7 +47,7 @@ export default function Contact() {
 
 			if (!res.ok) {
 				toast("Failed to send message.", {position: "bottom-right"});
-				// throw new Error("Failed to send message: " + res );
+				throw new Error("Failed to send message: " + res );
 			}
 			toast("Message sent successfully", {position: "bottom-right"});
 			form.reset();
