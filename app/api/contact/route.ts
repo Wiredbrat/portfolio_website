@@ -48,6 +48,7 @@ type mailDetails = {
 }
 async function sendMail({username, userEmail, userMessage}:mailDetails) {
   const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_ID,
