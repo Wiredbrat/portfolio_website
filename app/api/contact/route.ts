@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import nodemailer from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
 
     const { name, email, message } = parsed.data;
 
-    const mailInfo = sendMail({
+    const mailInfo = await sendMail({
       username: name,
       userEmail: email,
       userMessage: message
@@ -47,14 +48,15 @@ type mailDetails = {
   userMessage: string,
 }
 async function sendMail({username, userEmail, userMessage}:mailDetails) {
-  const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport<SMTPTransport.Options>({
     host: process.env.EMAIL_HOST,
-    service: 'gmail',
+    port: process.env.PORT,
+    secure:false,
     auth: {
       user: process.env.EMAIL_ID,
       pass: process.env.APP_PASSWORD,
     }
-  })
+  }as SMTPTransport.Options);
 
   transporter.verify((err, success) => {
     if(err) {
