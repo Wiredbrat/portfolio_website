@@ -11,10 +11,6 @@ const contactSchema = z.object({
   message: z.string().min(5, "Message must be at least 5 characters long"),
 });
 
-let username :string;
-let userEmail :string;
-let userMessage :string;
-
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -29,12 +25,12 @@ export async function POST(req: Request) {
 
     const { name, email, message } = parsed.data;
 
-    username = name;
-    userEmail = email;
-    userMessage = message;
-
-    console.log(username, userEmail, userMessage )
-    sendMail();
+    const mailInfo = sendMail({
+      username: name,
+      userEmail: email,
+      userMessage: message
+    });
+    return NextResponse.json({ success: true, message: 'message sent successfully:'+ mailInfo }, { status: 200 });
     
   } catch (error) {
     console.error("Error in /api/contact:", error);
@@ -45,8 +41,12 @@ export async function POST(req: Request) {
   }
 }
 
-
-function sendMail() {
+type mailDetails = {
+  username: string,
+  userEmail: string,
+  userMessage: string,
+}
+async function sendMail({username, userEmail, userMessage}:mailDetails) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -79,16 +79,7 @@ function sendMail() {
     `
   }
 
-  transporter.sendMail(mailOptions, (err, info) => {
-    if(err) {
-      throw new Error('error while sending message'+ err)
-    }
+  const info = await transporter.sendMail(mailOptions)
 
-    return NextResponse.json(
-      {success: true, message: info},
-      {status: 200}
-    )
-  })
-
-
+  return info;
 }
