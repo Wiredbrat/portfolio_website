@@ -36,7 +36,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Error in /api/contact:", error);
     return NextResponse.json(
-      { success: false, message: "Something went wrong"+error },
+      { success: false, message: "Something went wrong"+ error },
       { status: 500 }
     );
   }
