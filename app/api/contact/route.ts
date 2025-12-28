@@ -1,10 +1,11 @@
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import nodemailer from "nodemailer";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
 import dotenv from "dotenv";
 
 dotenv.config();
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -42,47 +43,33 @@ export async function POST(req: Request) {
   }
 }
 
+
 type mailDetails = {
   username: string,
   userEmail: string,
   userMessage: string,
 }
-async function sendMail({username, userEmail, userMessage}:mailDetails) {
-  const transporter = nodemailer.createTransport<SMTPTransport.Options>({
-    host: process.env.EMAIL_HOST,
-    port: process.env.PORT,
-    secure:false,
-    auth: {
-      user: process.env.EMAIL_ID,
-      pass: process.env.APP_PASSWORD,
-    }
-  }as SMTPTransport.Options);
 
-  transporter.verify((err, success) => {
-    if(err) {
-      throw new Error(`SMTP Config Error: , ${err}`)
-    }
-    else{
-      return NextResponse.json(
-      {success: true, message: success},
-      {status: 200}
-    )
-    }
-  })
+async function sendMail({username, userEmail, userMessage}: mailDetails) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "Atul <onboarding@resend.dev>",
+      to: [`vermaatul291002@gmail.com`],
+      subject: `Message from ${username} : via your website`,
+      html: `
+        <h3>${username} wants to contact you<h3>
+        <p>name: ${username}</p>
+        <p>name: ${userEmail}</p>
+        <p>name: ${userMessage}</p>
+      `
+    });
 
-  const mailOptions = {
-    from: process.env.EMAIL_ID,
-    to: process.env.RECIPIENT,
-    subject: `Message from ${username} : via your website`,
-    html: `
-      <h3>${username} wants to contact you<h3>
-      <p>name: ${username}</p>
-      <p>name: ${userEmail}</p>
-      <p>name: ${userMessage}</p>
-    `
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
+
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
   }
-
-  const info = await transporter.sendMail(mailOptions)
-
-  return info;
 }
